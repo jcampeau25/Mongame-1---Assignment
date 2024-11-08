@@ -29,6 +29,7 @@ namespace Mongame_1___Assignment
 
         protected override void Initialize()
         {
+
             // TODO: Add your initialization logic here
 
             _graphics.PreferredBackBufferWidth = 600;
