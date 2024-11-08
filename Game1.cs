@@ -15,7 +15,7 @@ namespace Mongame_1___Assignment
         Texture2D backgroundTexture, kanyeTexture, kendrickTexture;
         
 
-        List<string> backgrounds = new List<string> { "sunset", "forest", "nightsky"};
+        List<string> backgrounds = new List<string> { "beach", "forest", "nightsky"};
 
         Random generator = new Random();
 
@@ -45,8 +45,10 @@ namespace Mongame_1___Assignment
 
             // TODO: use this.Content to load your game content here
 
-            //int background = generator.Next(backgrounds.Count);
-            backgroundTexture = Content.Load<Texture2D>("nightsky");
+            int background = generator.Next(0, backgrounds.Count);
+            
+
+            backgroundTexture = Content.Load<Texture2D>(backgrounds[background]);
             kanyeTexture = Content.Load<Texture2D>("kanye");
             kendrickTexture = Content.Load<Texture2D>("kendrick");
 
@@ -72,8 +74,8 @@ namespace Mongame_1___Assignment
 
             _spriteBatch.Draw(backgroundTexture, new Vector2(0, 0), Color.White);
 
-            _spriteBatch.Draw(kanyeTexture, new Vector2(50,50), Color.White);
-            _spriteBatch.Draw(kendrickTexture, new Vector2(350,350), Color.White);
+            _spriteBatch.Draw(kanyeTexture, new Rectangle (10, 150, 250, 300), Color.White);
+            _spriteBatch.Draw(kendrickTexture, new Rectangle (200, 150, 300, 320), Color.White);
 
             _spriteBatch.End();
             base.Draw(gameTime);
